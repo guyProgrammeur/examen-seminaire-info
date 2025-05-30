@@ -65,7 +65,9 @@
     <div class="card">
         <h1>Bienvenue 🎓</h1>
         <p>Application Django de gestion des étudiants<br>CI/CD avec GitHub Actions et déployée sur Render.</p>
-
+        <a href="{% url 'liste_etudiants' %}" class="button">📋 Liste des étudiants</a>
+        <a href="{% url 'ajouter_etudiant' %}" class="button">➕ Ajouter un étudiant</a>
+        <a href="{% url 'ajouter_faculte' %}" class="button">➕ Ajouter un Faculte</a>
         <a href="/admin/" class="button">Accès Admin</a>
         <a href="https://github.com/guyProgrammeur/examen-seminaire-info" class="button" target="_blank">Voir sur GitHub</a>
 
