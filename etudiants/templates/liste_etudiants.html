@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Liste des Étudiants</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #2980b9; color: white; }
+        a.button {
+            padding: 8px 12px;
+            background: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a.button:hover { background: #1c5980; }
+    </style>
+</head>
+<body>
+    <h1>Liste des Étudiants</h1>
+    <a href="{% url 'ajouter_etudiant' %}" class="button">Ajouter un étudiant</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Faculté</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for etudiant in etudiants %}
+            <tr>
+                <td>{{ etudiant.nom }}</td>
+                <td>{{ etudiant.prenom }}</td>
+                <td>{{ etudiant.email }}</td>
+                <td>{{ etudiant.faculte.nom }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">Aucun étudiant trouvé.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="button">Retour à l'accueil</a>
+</body>
+</html>
