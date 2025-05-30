@@ -6,7 +6,7 @@ __pycache__/
 *.pyc
 
 # Base de données locale
-db.sqlite3
+#db.sqlite3
 
 # Paramètres et secrets (si tu en as)
 .env
